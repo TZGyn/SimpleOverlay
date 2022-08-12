@@ -20,8 +20,8 @@ html {
 }
 
 #main {
-	width: 1920px;
-	height: 1080px;
+	width: 100vw;
+	height: 100vh;
 	font-family: Arial;
 	color: black;
 	position: relative;
@@ -31,7 +31,7 @@ html {
 #top {
 	position: absolute;
 	top: 10px;
-	width: 1920px;
+	width: 100vw;
 	height: 100px;
 	z-index: -1;
 }
@@ -60,8 +60,8 @@ html {
 	right: 0;
 	bottom: 0;
 	margin: 0 auto;
-	width: 1920px;
-	height: 100px;
+	width: 100vw;
+	height: 5rem;
 	z-index: -1;
 	transition: opacity 300ms ease;
 }
@@ -92,7 +92,7 @@ html {
 	*Combo counter start
 */
 #combo_container {
-	right: 1200px;
+	right: calc(50% + 10rem);
 	transform: skew(-20deg);
 	transition: all 1.5s ease-in-out;
 }
@@ -112,7 +112,7 @@ html {
 	*PP counter start
 */
 #pp_container {
-	left: 1200px;
+	left: calc(50% + 10rem);
 	transform: skew(20deg);
 	transition: all 1.5s ease-in-out;
 }
@@ -181,7 +181,7 @@ html {
 	height: 50px;
 	border-radius: 10px;
 	left: 10px;
-	bottom: 95px;
+	bottom: 4.5rem;
 	background-color: #161616;
 	display: flex;
 	justify-content: center;
