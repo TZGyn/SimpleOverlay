@@ -160,6 +160,12 @@ socket.onmessage = (event) => {
 			menu_counter.style.opacity = 1;
 			animation.menu_pp_max.update(menu.pp['100']);
 			break;
+		case 7:
+			bottom.style.opacity = 0;
+			hit_counter_container.style.opacity = 0;
+			menu_counter.style.opacity = 1;
+			animation.menu_pp_max.update(gameplay.pp.current);
+			break;
 		default:
 			bottom.style.opacity = 0;
 			hit_counter_container.style.opacity = 0;
