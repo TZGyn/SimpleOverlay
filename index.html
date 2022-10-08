@@ -15,6 +15,7 @@
 		<script src="deps/reconnecting-websocket.min.js"></script>
 		<script src="deps/countUp.js"></script>
 		<script src="deps/odometr.js"></script>
+		<script src="deps/KeyOverlay.js"></script>
 	</head>
 	<body>
 		<div id="main">
@@ -66,8 +67,37 @@
 				</div>
 			</div>
 			<!-- TODO: difficulty graph in game -->
-			<!-- TODO: key overlay in game -->
-			<script src="index.js"></script>
+			<div id="keys">
+				<div class="keyContainer">
+					<div class="tiles relative">
+						<div id="k1Tiles" class="absolute"></div>
+						<div class="keyTap" id="k1"></div>
+					</div>
+					<!--        <div class="text" id="k1Text">K1</div>-->
+				</div>
+				<div class="keyContainer">
+					<div class="tiles relative">
+						<div id="k2Tiles" class="absolute"></div>
+						<div class="keyTap" id="k2"></div>
+					</div>
+					<!--        <div class="text" id="k2Text">K2</div>-->
+				</div>
+				<div class="keyContainer">
+					<div class="tiles relative">
+						<div id="m1Tiles" class="absolute"></div>
+						<div class="keyTap" id="m1"></div>
+					</div>
+					<!--        <div class="text" id="m1Text">M1</div>-->
+				</div>
+				<div class="keyContainer">
+					<div class="tiles relative">
+						<div id="m2Tiles" class="absolute"></div>
+						<div class="keyTap" id="m2"></div>
+					</div>
+					<!--        <div class="text" id="m2Text">M2</div>-->
+				</div>
+			</div>
 		</div>
+		<script src="index.js"></script>
 	</body>
 </html>

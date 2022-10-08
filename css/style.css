@@ -5,6 +5,14 @@
 	--bg: linear-gradient(90deg, #313131, #161616);
 	--accent: rgb(88, 55, 236);
 	--accent2: rgb(48, 29, 131);
+	--keyColor: #464646;
+	--keyOnTapColor: #afafaf;
+	--tileColor: #464646;
+	--fadeIn: linear-gradient(
+		to left,
+		rgba(0, 0, 0, 1) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
 }
 
 @font-face {
@@ -232,3 +240,84 @@ html {
 /*
 	*Hit counter end
 */
+
+/*
+	*Key counter start
+*/
+
+#keys {
+	position: absolute;
+	width: 400px;
+	height: 441px;
+	right: -95px;
+	/* center vertically */
+	top: 34%;
+	/* scale down to 0.5 */
+	transform: scale(0.5);
+}
+
+.keyContainer {
+	width: 400px;
+	height: 72px;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	grid-template-rows: 1fr;
+	justify-content: center;
+	align-content: center;
+	padding-bottom: 51px;
+}
+
+.keyTap {
+	border-radius: 5px;
+	background-color: var(--keyColor);
+	position: absolute;
+	right: 0;
+	width: 10px;
+	height: 100%;
+}
+
+.text {
+	min-width: 50px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1/1;
+	height: 100%;
+}
+
+.absolute {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.relative {
+	position: relative;
+	height: 100%;
+}
+
+.wrapper {
+	max-width: 100%;
+	height: 100%;
+}
+
+.tiles {
+	-webkit-mask: var(--fadeIn);
+}
+
+.tile {
+	background-color: var(--tileColor);
+	width: 0;
+	height: 66px;
+	top: 3px;
+	max-width: 100%;
+	right: 0;
+	border-radius: 5px;
+}
+
+@keyframes moveOut {
+	100% {
+		transform: translateX(-100%);
+	}
+}
