@@ -173,7 +173,7 @@ socket.onmessage = (event) => {
 	} else if (menu.state == 7) {
 		bottom.style.opacity = 0;
 		hit_counter_container.style.opacity = 0;
-		menu_counter.style.opacity = 1;
+		menu_counter.style.opacity = 0;
 		keys.style.opacity = 0;
 		// animation.menu_pp_max.update(gameplay.pp.current);
 	} else {
