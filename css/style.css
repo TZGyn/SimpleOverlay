@@ -5,9 +5,9 @@
 	--bg: linear-gradient(90deg, #313131, #161616);
 	--accent: rgb(88, 55, 236);
 	--accent2: rgb(48, 29, 131);
-	--keyColor: #464646;
-	--keyOnTapColor: #afafaf;
-	--tileColor: #464646;
+	--keyColor: #537fd6;
+	--keyOnTapColor: #839fd8;
+	--tileColor: #537fd6;
 	--fadeIn: linear-gradient(
 		to left,
 		rgba(0, 0, 0, 1) 80%,
@@ -247,13 +247,15 @@ html {
 
 #keys {
 	position: absolute;
+	padding-right: 1px;
 	width: 400px;
-	height: 441px;
-	right: -95px;
+	height: 453px;
+	right: -40px;
 	/* center vertically */
 	top: 34%;
 	/* scale down to 0.5 */
 	transform: scale(0.5);
+	/* background-color: #000; */
 }
 
 .keyContainer {
@@ -264,7 +266,7 @@ html {
 	grid-template-rows: 1fr;
 	justify-content: center;
 	align-content: center;
-	padding-bottom: 51px;
+	padding-bottom: 55px;
 }
 
 .keyTap {
@@ -314,6 +316,7 @@ html {
 	max-width: 100%;
 	right: 0;
 	border-radius: 5px;
+	opacity: 0.8;
 }
 
 @keyframes moveOut {
