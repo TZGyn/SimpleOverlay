@@ -1,0 +1,14 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+	font-family: 'GothicRD';
+	src: url('./fonts/GothicRD.ttf');
+}
+
+@layer base {
+	html {
+		font-family: GothicRD;
+	}
+}
