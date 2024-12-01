@@ -5,6 +5,7 @@
 	import type { PreciseData, WebSocketData } from '$lib/type'
 	import { cn } from '$lib/utils'
 	import KeyOverlay from '$lib/component/KeyOverlay.svelte'
+	import DifficultyGraph from '$lib/component/DifficultyGraph.svelte'
 
 	let currentPP = $state(0)
 	let maxPP = $state(0)
@@ -30,6 +31,9 @@
 	let inGame = $state(false)
 	let inMenu = $state(false)
 	let comboBreak = $state(false)
+
+	let graphData = $state<any>()
+	let graphProgress = $state(0)
 
 	const socket = new reconnectingWebsocket(
 		'ws://127.0.0.1:24050/websocket/v2',
@@ -60,6 +64,16 @@
 		} else {
 			comboBreak = false
 		}
+
+		graphData = data.performance.graph
+		const percentage = Math.max(
+			0,
+			Math.min(
+				(data.beatmap.time.live / data.beatmap.time.mp3Length) * 100,
+				100,
+			),
+		)
+		graphProgress = percentage
 	}
 
 	const preciseSocket = new reconnectingWebsocket(
@@ -81,6 +95,10 @@
 </script>
 
 <main class="h-screen w-screen">
+	<DifficultyGraph
+		graphWebsocketData={graphData}
+		{graphProgress}
+		show={inGame} />
 	<div
 		class={cn(
 			'absolute right-[500px] top-64 text-3xl transition duration-1000 ease-in-out',

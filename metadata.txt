@@ -1,6 +1,6 @@
 Usecase: ingame, obs-overlay
 Name: SimpleOverlay
-Author: tzgyn
+Author: TZGyn
 Version: 1.0
 CompatibleWith: tosu
 Resolution: 1920x1080
