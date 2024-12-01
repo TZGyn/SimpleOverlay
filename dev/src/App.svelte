@@ -22,6 +22,10 @@
 	let k1IsPressed = $state(false)
 	let k2Count = $state(0)
 	let k2IsPressed = $state(false)
+	let m1Count = $state(0)
+	let m1IsPressed = $state(false)
+	let m2Count = $state(0)
+	let m2IsPressed = $state(false)
 
 	let inGame = $state(false)
 	let inMenu = $state(false)
@@ -69,6 +73,10 @@
 		k2Count = data.keys.k2.count
 		k1IsPressed = data.keys.k1.isPressed
 		k2IsPressed = data.keys.k2.isPressed
+		m1Count = data.keys.m1.count
+		m2Count = data.keys.m2.count
+		m1IsPressed = data.keys.m1.isPressed
+		m2IsPressed = data.keys.m2.isPressed
 	}
 </script>
 
@@ -90,7 +98,7 @@
 	</div>
 	<div
 		class={cn(
-			'absolute right-8 top-80 h-64 w-96 text-3xl transition duration-1000 ease-in-out',
+			'absolute right-0 top-[465px] h-64 w-96 text-3xl transition duration-1000 ease-in-out',
 			inGame ? 'opacity-100' : 'opacity-0',
 		)}>
 		<KeyOverlay
@@ -102,11 +110,21 @@
 			key={'k2'}
 			isPressed={k2IsPressed}
 			count={k2Count}
-			class="top-16" />
+			class="top-[66px]" />
+		<KeyOverlay
+			key={'m1'}
+			isPressed={m1IsPressed}
+			count={m1Count}
+			class="top-[132px]" />
+		<KeyOverlay
+			key={'m2'}
+			isPressed={m2IsPressed}
+			count={m2Count}
+			class="top-[198px]" />
 	</div>
 	<div
 		class={cn(
-			'absolute right-8 top-64 text-3xl transition duration-1000 ease-in-out',
+			'absolute right-8 top-96 text-3xl transition duration-1000 ease-in-out',
 			inGame ? 'opacity-100' : 'opacity-0',
 		)}>
 		<div

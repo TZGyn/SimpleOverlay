@@ -28,11 +28,11 @@
 
 	const createNewTile = () => {
 		const child = document.createElement('div')
-		child.style.height = '50px'
+		child.style.height = '40px'
 		child.style.width = '2px'
 		child.style.backgroundColor = '#86feae'
 		child.style.position = 'absolute'
-		child.style.top = '7px'
+		child.style.top = '5px'
 		child.style.bottom = '3px'
 		child.style.left = '300px'
 		child.style.borderRadius = '0.5rem'
@@ -72,16 +72,20 @@
 	})
 </script>
 
-<div class={cn('absolute flex h-16 w-96 overflow-hidden', className)}>
+<div
+	class={cn(
+		'absolute flex h-[50px] w-96 overflow-hidden',
+		className,
+	)}>
 	<div bind:this={tile} class="grow" id="tiles"></div>
-
 	<div
-		class="relative flex h-full w-16 items-center justify-center text-white">
-		<span
-			id="key"
-			class={cn(isPressed ? 'text-[#86feae]' : 'text-white')}>
-			{key}
-		</span>
+		class="relative flex h-full w-16 items-center justify-start text-white">
+		<div
+			class={cn(
+				'h-full w-2 shadow-2xl',
+				isPressed ? 'bg-[#86feae]' : 'bg-white',
+			)}>
+		</div>
 		<span
 			class="absolute right-24 top-0 flex h-full items-center justify-center text-[#86feae]">
 			<NumberTicker value={count} class="text-[#86feae]" shadow />
@@ -89,24 +93,7 @@
 	</div>
 </div>
 
-<!-- <div
-	class="wrapper absolute"
-	style="animation: 4000ms linear forwards moveOut;">
-	<div class="tile absolute" style="width: 400px;"></div>
-</div>
-<div
-	class="wrapper absolute"
-	style="animation: 4000ms linear forwards moveOut;">
-	<div class="tile absolute" style="width: 40.4px;"></div>
-</div> -->
-
 <style>
-	#key {
-		text-shadow:
-			0 0 0.2em black,
-			0 0 0.5em black,
-			0 0 0.8em black;
-	}
 	#tiles {
 		-webkit-mask: linear-gradient(
 			to left,
